@@ -1,43 +1,28 @@
 #include "main.h"
-
 /**
-* rot13 -  encodes a string using rot13
-* @s: string targeted
-*Return: returns the encoded string
-*/
+ * rot13 - encodes a string using rot13
+ * @s: input string
+ * Return: the pointer to dest
+ */
+
 char *rot13(char *s)
 {
-	int index1, index2;
+	int i, j;
 
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-											 'G', 'H', 'I', 'J', 'K', 'L',
-											 'M', 'N', 'O', 'P', 'Q', 'R',
-											 'S', 'T', 'U', 'V', 'W', 'X',
-											 'Y', 'Z', 'a', 'b', 'c', 'd',
-											 'e', 'f', 'g', 'h', 'i', 'j',
-											 'k', 'l', 'm', 'n', 'o', 'p',
-											 'q', 'r', 's', 't', 'u', 'v',
-											 'w', 'x', 'y', 'z'};
+	char *x = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *y = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-											 'T', 'U', 'V', 'W', 'X', 'Y',
-											 'Z', 'A', 'B', 'C', 'D', 'E',
-											 'F', 'G', 'H', 'I', 'J', 'K',
-											 'L', 'M', 'n', 'o', 'p', 'q',
-											 'r', 's', 't', 'u', 'v', 'w',
-											 'x', 'y', 'z', 'a', 'b', 'c',
-											 'd', 'e', 'f', 'g', 'h', 'i',
-											 'j', 'k', 'l', 'm'};
-	while (s[++index1])
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (index2 = 0; index2 < 52; index2++)
+		for (j = 0; x[j] != '\0'; j++)
 		{
-			if (s[index1] == alphabet[index2])
+			if (s[i] == x[j])
 			{
-				s[index1] = rot13key[index2];
+				s[i] = y[j];
 				break;
 			}
 		}
 	}
+
 	return (s);
 }
