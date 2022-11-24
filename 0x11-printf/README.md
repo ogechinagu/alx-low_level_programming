@@ -2,7 +2,7 @@
 
 ## printf
 
-A a simple printf function built by Chinweze Emmanuel Mmaduabuchi and Ogechi Ikwunagu for Alx Software Engineering Program.
+A a simple printf function built by **Chinweze Emmanuel Mmaduabuchi** and **Ogechi Ikwunagu** for Alx Software Engineering Program.
 
 [View Project Repository here](https://github.com/emmareal/printf)
 
